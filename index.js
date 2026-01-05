@@ -17,6 +17,7 @@ require("jquery-basic-arithmetic-plugin")
 	const STARTING_VVALUE_USER_PAD = zr0()
 
 	function vValue(num) {
+		if (require("is-float")(num)) return num
 		if (not(isFinite(num))) {
 			return num
 		}
