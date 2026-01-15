@@ -3,10 +3,10 @@ const GetIntrinsic = require("get-intrinsic")
 global.jQuery = require("jquery")
 require("jquery-basic-arithmetic-plugin")
 ;(function ($) {
-  const zr0 = require("integer-value-positive-zero")
+  const zr0 = () => require("@positive-numbers/zero")
   const leftpad = require("left-pad")
   const rightpad = require("rightpad")
-  const tVal = require("true-value")
+  const tVal = require("true-value")()
   const _f = require("false")
   const MathRandom = GetIntrinsic("%Math.random%")
   const isFinite = require("@is-(unknown)/is-finite")
@@ -18,7 +18,7 @@ require("jquery-basic-arithmetic-plugin")
 
   function vValue(num) {
     try {
-      if (require("is-float")(num)) return num
+      if (require("number-is-float")(num)) return num
     } catch {}
     if (not(isFinite(num))) {
       return num
